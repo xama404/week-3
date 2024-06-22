@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/blog.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- nav awal -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img style="height: 50px;" src="https://dumbways.id/assets/images/brandwhite.png" alt="logo dumbways">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/testimonial">Testimonial</a>
+                    </li>
+                </ul>
+                <a href="/contact"><button class="btn btn-warning" type="submit">Contact Me</button></a>
+            </div>
+        </div>
+    </nav>
+    <!-- nav akhir -->
+
+<!-- Update Project Form -->
+<div class="container mt-5">
+  <h1 class="text-center">Update Project</h1>
+  <form action="/update-project/{{index}}" method="POST">
+    <div class="col-md-8 offset-md-2 mb-3">
+      <label for="inputProjectName" class="form-label">Project Name</label>
+      <input type="text" class="form-control" id="inputProjectName" name="inputProjectName" required value="{{project.inputProjectName}}">
+    </div>
+    <div class="col-md-8 offset-md-2 mb-3">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="startDate" class="form-label">Start Date</label>
+          <input type="date" class="form-control" id="startDate" name="startDate" required value="{{project.startDate}}">
+        </div>
+        <div class="col-md-6">
+          <label for="endDate" class="form-label">End Date</label>
+          <input type="date" class="form-control" id="endDate" name="endDate" required value="{{project.endDate}}">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 offset-md-2 mb-3">
+      <label for="inputDescription" class="form-label">Description</label>
+      <textarea class="form-control" id="inputDescription" name="inputDescription" rows="3" required style="resize: none;">{{project.inputDescription}}</textarea>
+    </div>
+    <div class="col-md-8 offset-md-2 mb-3">
+      <label class="form-label">Technologies</label>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Node.js" id="technologies1" name="technologies" {{#if (includes project.technologies "Node.js")}}checked{{/if}}>
+            <label class="form-check-label" for="technologies1">Node.js</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="React.js" id="technologies2" name="technologies" {{#if (includes project.technologies "React.js")}}checked{{/if}}>
+            <label class="form-check-label" for="technologies2">React.js</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Next.js" id="technologies3" name="technologies" {{#if (includes project.technologies "Next.js")}}checked{{/if}}>
+            <label class="form-check-label" for="technologies3">Next.js</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="TypeScript" id="technologies4" name="technologies" {{#if (includes project.technologies "TypeScript")}}checked{{/if}}>
+            <label class="form-check-label" for="technologies4">TypeScript</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 offset-md-2 mb-3">
+      <label for="inputImage" class="form-label">Project Image</label>
+      <input type="file" class="form-control" id="inputImage" name="image">
+    </div>
+    <div class="col-md-8 offset-md-2 d-flex justify-content-end mt-4">
+      <input type="submit" value="Update Project" class="btn btn-primary">
+    </div>
+  </form>
+</div>
+<!-- End Update Project Form -->
+
+<!-- Import Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

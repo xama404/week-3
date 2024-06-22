@@ -1,0 +1,45 @@
+.nav-item a:hover {
+    color:yellowgreen !important;
+}
+
+.active {
+    color: yellow !important;
+}
+
+.btn-dw{
+    background-color: orangered !important;
+}
+
+.navbar {
+    background-color: rgb(7, 95, 7) !important;    
+}
+
+.navbar-nav{
+    gap: 40px !important;
+    margin-left: 70px !important;
+    font-weight: bold;
+    font-size: 20px !important;
+}
+
+.project-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.project-card img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.project-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.project-description {
+    font-size: 0.9rem;
+}
+.project-icons i {
+    margin-right: 10px;
+}
+.project-buttons .btn {
+    margin-right: 5px;
+}
